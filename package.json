@@ -1,0 +1,17 @@
+{
+  "name": "pw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.5.1",
+    "@playwright/test": "^1.37.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
