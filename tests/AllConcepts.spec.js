@@ -1,4 +1,3 @@
-
 import { expect, test } from "@playwright/test";
 
 test.describe("Whole Test", async () => {
@@ -50,10 +49,10 @@ test.describe("Whole Test", async () => {
 
     test.skip('alert', async ({ page, context }) => {
 
-        // accept
+        // accept    // sendKeys
         // dismiss
         // message  // getText
-        //          // sendKeys
+        // defaultValue         
 
         await page.goto('https://letcode.in/alert');
         await page.waitForLoadState('networkidle')
@@ -68,6 +67,29 @@ test.describe("Whole Test", async () => {
         await page.waitForLoadState('networkidle')
 
     })
+
+    test.skip('Select-DropDown', async ({ page }) => {
+
+        await page.goto('https://www.lambdatest.com/selenium-playground/jquery-dropdown-search-demo');
+
+        await page.selectOption(`//select[@id="country"]`, { value: "India" })
+
+        await page.selectOption(`//select[@id="country"]`, [
+            { value: "India" },
+            { label: "USA" },
+            { index: 8 }
+        ])
+
+        await page.click(`//select[@class='js-example-basic-multiple pl-10 select2-hidden-accessible']`);
+        await page.locator('//ul[@class="select2-selection__rendered"]').locator('li', { hasText: 'California' }).click();
+        await page.locator('//ul[@class="select2-selection__rendered"]').locator('li', { hasText: 'Mississippi' }).click();
+
+        await page.waitForTimeout(5000)
+
+
+    })
+
+
 
 
 })
