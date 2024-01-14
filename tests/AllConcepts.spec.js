@@ -30,7 +30,7 @@ test.describe("Whole Test", async () => {
         // frame - ?. fill method
         // frameLocator - locator & fill method
 
-        // driver.switchTo.frame
+        // driver.switchTo.frame (name, id, index)
         // driver.switchTo.defaultContent
 
         await page.goto('https://letcode.in/frame');
@@ -70,6 +70,16 @@ test.describe("Whole Test", async () => {
 
     test.skip('Select-DropDown', async ({ page }) => {
 
+        // Select select = new Select(locator)
+
+        // selectByVisibleText
+        // selectByIndex
+        // selectByValue
+
+        // deselectAll
+        // isMultiple
+        // getOptions
+
         await page.goto('https://www.lambdatest.com/selenium-playground/jquery-dropdown-search-demo');
 
         await page.selectOption(`//select[@id="country"]`, { value: "India" })
@@ -86,6 +96,15 @@ test.describe("Whole Test", async () => {
 
         await page.waitForTimeout(5000)
 
+
+    })
+
+    test('Date Pickers', async ({page}) => {
+
+        await page.goto('https://www.lambdatest.com/selenium-playground/jquery-date-picker-demo');
+        await page.fill(`//input[@type="text"][@id="from"]`, '06/06/2023');
+
+        // using moment js we can manipulate
 
     })
 
